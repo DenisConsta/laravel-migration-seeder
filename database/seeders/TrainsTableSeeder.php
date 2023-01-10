@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Faker\Generator as Faker;
 use App\Models\Train;
 use DateTime;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -14,7 +15,7 @@ class TrainsTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
         /*
             $table->id();
@@ -30,7 +31,7 @@ class TrainsTableSeeder extends Seeder
             $table->timestamps();
         */
 
-        $train = new Train();
+        /* $train = new Train();
         $train->company = 'TestCompany';
         $train->departure_station = 'Trieste';
         $train->arrival_station = 'Verona';
@@ -39,6 +40,23 @@ class TrainsTableSeeder extends Seeder
         $train->train_code = 'ZX132231';
         $train->n_carriages = 22;
 
-        $train->save();
+        $train->save(); */
+
+        for ($i = 0; $i < 100; $i++){
+
+            $train = new Train();
+            $train->company = $faker->words(2, true);
+            $train->departure_station = $faker->city();
+            $train->arrival_station = $faker->city();
+            $train->departure_time = $faker->dateTime()->format('Y-m-d H:i:s');
+            $train->arrival_time = $faker->dateTime()->format('Y-m-d H:i:s');
+            $train->train_code = $faker->bothify('##???????');
+            $train->n_carriages = $faker->numberBetween(1, 100);
+
+            $train->save();
+        }
+
+
+
     }
 }

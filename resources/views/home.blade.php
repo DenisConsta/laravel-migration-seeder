@@ -4,7 +4,7 @@
     <div class="row">
 
         @foreach ($data as $train)
-            <div class="col">
+            <div class="col py-3">
                 <div class="card" style="width: 20rem;">
                     <div class="card-header">
                         {{ $train->company }}
