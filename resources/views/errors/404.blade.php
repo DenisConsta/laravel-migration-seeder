@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ Vite::asset('resources/scss/styles/404.scss') }}">
-    <title>Document</title>
+    <title>Error 404</title>
 </head>
 
 <body>
